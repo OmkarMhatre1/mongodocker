@@ -1,0 +1,15 @@
+version: "5"
+services:
+  mongodbexample:
+    image: mongodbexample:latest
+    container_name: "mongodbexample"
+    ports :
+      - 27017:27017
+#spring configuration
+  mongodb:
+    image: mongodb:latest
+    container_name: "mongodb"
+    ports :
+      - 8080:8080
+    links :
+      - mongodbexample
